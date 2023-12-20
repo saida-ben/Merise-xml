@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel 10 User Roles and Permissions - ItSolutionStuff.com
+                    Laravel 10 User Roles and Permissions 
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -53,10 +53,22 @@
                             <li><a class="nav-link" href="{{ route('users.index') }}">Manage Users</a></li>@endcan   
                             @can('role-list')
     <li><a class="nav-link" href="{{ route('roles.index') }}">Manage Role</a></li>
-@endcan                           
+@endcan       
+                   
+
+
 @can('product-list')
 <li><a class="nav-link" href="{{ route('products.index') }}">Manage Product</a></li>@endcan
-                            <li class="nav-item dropdown">
+                           
+             @can('condidat-list')
+                               <li><a class="nav-link" href="{{ route('condidats.index') }}">Liste Condidats</a></li>
+                               @endcan
+
+             @can('condidat-create')
+                            <li><a class="nav-link" href="{{ route('condidats.create') }}">create Condidat</a></li>
+                            @endcan
+
+ <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>

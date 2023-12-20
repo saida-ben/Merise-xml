@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -26,8 +27,20 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected function redirectTo()
+    {
+        // Vérifier si l'utilisateur a la permission de voir la liste des candidats
+        if (Auth::check() && Auth::user()->hasPermissionTo('role-list')) {
+            return route('roles.index');
+        } else if(Auth::check() && Auth::user()->hasPermissionTo('condidat-list')){
+            // Redirection par défaut (peut être ajustée selon vos besoins)
+            return route('condidats.index');
+        }else{
+            return route('/');
 
+        }
+
+    }
     /**
      * Create a new controller instance.
      *
