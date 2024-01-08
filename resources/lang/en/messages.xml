@@ -1,0 +1,11 @@
+<resources>
+    <message key="title">ESTS</message>
+    <message key="our_programs">Our Programs</message>
+    <message key="Conditions">Registration conditions</message>
+    <message key="contact_us">Contact Us</message>
+    <message key="Manage_Users">Manage Users</message>
+    <message key="Bienvenu">Welcome</message>
+    <message key="register">Pre-register</message>
+    <message key="login">login</message>
+    <message key="school">At the higher school of technology in Safi</message>
+</resources>

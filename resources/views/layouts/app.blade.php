@@ -8,11 +8,19 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
   
     <title>{{ config('app.name', 'Laravel') }}</title>
-  
+   
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-  
+    <script>
+        // Fonction pour changer la langue
+        function changeLanguage() {
+            var langSelect = document.getElementById('langSelect');
+            var selectedLang = langSelect.value;
+            window.location.href = '/change-languages?lang=' + selectedLang;
+        }
+        console.log("Langue actuelle dans la session :", "{{ session('lang') }}");
+    </script>
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -49,12 +57,23 @@
                                 </li>
                             @endif
                         @else
-                        @can('user-list')
-                            <li><a class="nav-link" href="{{ route('users.index') }}">Manage Users</a></li>@endcan   
-                            @can('role-list')
+                            @can('user-list')
+                            <?php
+                            $translations = app('App\Http\Controllers\LanguageController')->loadTranslations(App::getLocale());
+?>
+                            <li><a class="nav-link" href="{{ route('users.index') }}">{{ $translations['Manage_Users'] }}</a></li>
+                            @endcan    @can('role-list')
     <li><a class="nav-link" href="{{ route('roles.index') }}">Manage Role</a></li>
-@endcan       
-                   
+@endcan   
+
+<select name="lang" id="langSelect" onchange="changeLanguage()">
+    <option value="en" {{ session('lang') == 'en' ? 'selected' : '' }}>English</option>
+    <option value="fr" {{ session('lang') == 'fr' ? 'selected' : '' }}>Français</option>
+    <!-- Ajoutez d'autres options pour d'autres langues si nécessaire -->
+</select>
+</form>
+
+</form>
 
 
 @can('product-list')

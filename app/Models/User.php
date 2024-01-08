@@ -19,12 +19,28 @@ class User extends Authenticatable
      * @var array
 
      */
+    public static function boot()
+    {
+        parent::boot();
+    
+        // Événement de création de l'utilisateur
+        static::creating(function ($user) {
+            // Assigne la préférence par défaut
+            $user->preferences()->create(['language' => 'en']); // Vous pouvez choisir la langue par défaut
+        });
+    }
     protected $fillable = [
         'name',
         'email',
         'password',
     ];
+    
   
+  
+    public function preferences()
+    {
+        return $this->hasOne(UserPreferences::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

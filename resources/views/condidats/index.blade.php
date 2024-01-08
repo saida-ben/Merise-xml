@@ -1,3 +1,7 @@
+
+@php
+    $lang = 'en'; // ou récupérez la langue à partir des préférences de l'utilisateur
+@endphp
 <!-- resources/views/Condidat/index.blade.php -->
 @extends('layouts.app')
 

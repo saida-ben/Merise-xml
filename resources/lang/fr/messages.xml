@@ -1,0 +1,11 @@
+<resources>
+    <message key="title">ESTS</message>
+    <message key="our_programs">Nos Filières</message>
+    <message key="Conditions">Conditions d'inscription</message>
+    <message key="contact_us">Contactez Nous</message>
+    <message key="Manage_Users"> utilisateur</message>
+    <message key="Bienvenu">Bienvenu</message>
+    <message key="register">Pré-inscrire</message>
+    <message key="login">Se Connecter</message>
+    <message key="school">A l'école supérieure de technologir à Safi</message>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <message key="title">ESTS</message>
+    <message key="our_programs">Nos Filières</message>
+    <message key="login">Connexion</message>
+    <message key="contact_us">Contactez Nous</message>
+    <message key="Manage_Users">apas Users</message>
+</resources>

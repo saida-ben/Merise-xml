@@ -1,0 +1,7 @@
+<!-- resources/lang/fr.xml -->
+<resources>
+    <title>ESTS</title>
+    <our_programs>Nos Filières</our_programs>
+    <login>Connexion</login>
+    <contact_us>Contactez Nous</contact_us>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+    <message key="title">ESTS</message>
+    <message key="our_programs">برامجنا</message>
+    <message key="Conditions">شروط التسجيل</message>
+    <message key="contact_us">تواصل بنا</message>
+    <message key="Manage_Users">Manage Users</message>
+    <message key="Bienvenu">مرحباً</message>
+    <message key="register">التسجيل </message>
+    <message key="login">تسجيل الدخول </message>
+    <message key="school">المدرسة العليا للتكنولوجيا بآسفي</message>
+</resources>

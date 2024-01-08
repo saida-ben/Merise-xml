@@ -1,9 +1,17 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Accueil</title>
+  <script>
+    // Fonction pour changer la langue
+    function changeLanguage() {
+        var langSelect = document.getElementById('langSelect');
+        var selectedLang = langSelect.value;
+        window.location.href = '/changement-de-langue?lang=' + selectedLang;
+    }
+</script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
@@ -120,6 +128,11 @@ overflow: hidden;
 height: 1.75rem;
 justify-self: center;
 }
+.logo-img {
+    float: left;
+    margin-right: 40px;
+    margin-left: 50px;
+  }
 
 .menu__nav-top a {
 margin: 0 1rem;
@@ -235,27 +248,46 @@ height: 100%;
 width: 100%;
 }
 
+#langSelect {
+      margin-left: auto;
+      font-size: 16px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-left:20;
+    }
 
+    #langSelect:hover {
+      border-color: #666;
+    }
 </style>
 <body>
+
 <div class="menu">
-      <div class="menu__top">
-    <h2 class="menu__title">ESTS</h2>
-        <nav class="menu__nav-top">
-          <a href="#" class="line-link">Nos Filières</a>
-          <a href="#" class="line-link">Login</a>
-          <a href="#" class="line-link">Contactez Nous</a>
-        </nav>
-      </div>
+    <div class="menu__top">
+    <img src="{{ asset('l.png') }}" class="logo-img" alt="Logo" width="50" height="50">
+            <nav class="menu__nav-top">
+                <a href="#" class="line-link">{{ $translations['our_programs'] }}</a>
+                <a href="#" class="line-link">{{ $translations['Conditions'] }}</a>
+                <a href="#" class="line-link">{{ $translations['contact_us'] }}</a>
+                <select name="lang" id="langSelect" onchange="changeLanguage()">
+        <option value="en" {{ $lang == 'en' ? 'selected' : '' }}>English</option>
+        <option value="fr" {{ $lang == 'fr' ? 'selected' : '' }}>Français</option>
+        <option value="ar" {{ $lang == 'ar' ? 'selected' : '' }}>Arabe</option>
+        <!-- Ajoutez d'autres options pour d'autres langues si nécessaire -->
+    </select>
+              </nav>
+    </div>
 </div>
+
   <div class="banner">
     <div class="banner__overlay">
       <div class="banner__container">
-        <h1 class="banner__title">Bienvenu</h1>
-        <p class="banner__text">A l'école supérieure de technologir à Safi</p>
-        <button class="custom-btn btn-3"onclick="window.location.href='/Inscription'"><span>Pré-inscrire</span></button>
+        <h1 class="banner__title">{{ $translations['Bienvenu'] }}</h1>
+        <p class="banner__text">{{ $translations['school'] }}</p>
+        <button class="custom-btn btn-3"onclick="window.location.href='/Inscription'"><span>{{ $translations['register'] }}</span></button>
         <button class="custom-btn btn-3" onclick="window.location.href='/LoginF'">
-  <span>Se Connecter</span>
+  <span>{{ $translations['login'] }}</span>
 </button>      </div>
     </div>
   </div>

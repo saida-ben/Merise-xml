@@ -27,7 +27,9 @@ class CondidatController extends Controller
      */
     public function create(): View
     {
-        return view('Inscription');
+        $lang = 'en'; // ou récupérez la langue à partir des préférences de l'utilisateur
+
+        return view('Inscription')->with('lang', $lang);;
     }
 
     /**

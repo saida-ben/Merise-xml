@@ -1,0 +1,7 @@
+<resources>
+    <message key="title">ESTS</message>
+    <message key="our_programs">Our Programs</message>
+    <message key="login">Login</message>
+    <message key="contact_us">Contact Us</message>
+    <message key="Manage_Users">Manage Users</message>
+</resources>
