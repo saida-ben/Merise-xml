@@ -88,7 +88,7 @@ right: 0;
 z-index: 100;
 color: #fff;
 display: grid;
-grid-template-rows: 3rem 1fr;
+grid-template-rows: 5rem 1fr;
 grid-template-areas: 'top' 'content';
 pointer-events: none;
 opacity: 0.9;
@@ -129,6 +129,7 @@ height: 1.75rem;
 justify-self: center;
 }
 .logo-img {
+    position: relative;
     float: left;
     margin-right: 40px;
     margin-left: 50px;
@@ -143,6 +144,39 @@ text-decoration: none;
 .menu__nav-top a:hover {
 text-decoration: underline;
 }
+/* Styles pour la sélection de langue */
+#langSelect {
+    appearance: none; /* Masquer le style par défaut du navigateur */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 7px;
+    padding: 10px 25px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),7px 7px 20px 0px rgba(0, 0, 0, 0.1),4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    outline: none;
+    background: rgba(243, 143, 72, 0.909);
+}
+
+
+/* Styles pour les options de la sélection */
+#langSelect option {
+   text-align: center;
+    font-weight: bold;
+    background-color: #fff; /* Couleur de fond pour chaque option */
+    color: #000; /* Couleur du texte pour chaque option */
+}
+
+
+
 button {
 margin: 20px;
 }
@@ -247,19 +281,6 @@ height: 100%;
 .btn-3 span:hover:after {
 width: 100%;
 }
-
-#langSelect {
-      margin-left: auto;
-      font-size: 16px;
-      padding: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      margin-left:20;
-    }
-
-    #langSelect:hover {
-      border-color: #666;
-    }
 </style>
 <body>
 
@@ -270,13 +291,14 @@ width: 100%;
                 <a href="#" class="line-link">{{ $translations['our_programs'] }}</a>
                 <a href="#" class="line-link">{{ $translations['Conditions'] }}</a>
                 <a href="#" class="line-link">{{ $translations['contact_us'] }}</a>
-                <select name="lang" id="langSelect" onchange="changeLanguage()">
+        
+              </nav>
+              <select name="lang" id="langSelect" onchange="changeLanguage()">
         <option value="en" {{ $lang == 'en' ? 'selected' : '' }}>English</option>
         <option value="fr" {{ $lang == 'fr' ? 'selected' : '' }}>Français</option>
         <option value="ar" {{ $lang == 'ar' ? 'selected' : '' }}>Arabe</option>
         <!-- Ajoutez d'autres options pour d'autres langues si nécessaire -->
     </select>
-              </nav>
     </div>
 </div>
 
