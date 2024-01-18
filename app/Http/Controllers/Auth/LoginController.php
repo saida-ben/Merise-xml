@@ -36,7 +36,7 @@ class LoginController extends Controller
             // Redirection par défaut (peut être ajustée selon vos besoins)
             return route('condidats.index');
         }else{
-            return route('/');
+            return route('home');
 
         }
 

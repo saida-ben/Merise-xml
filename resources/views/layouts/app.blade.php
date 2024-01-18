@@ -66,11 +66,6 @@
     <li><a class="nav-link" href="{{ route('roles.index') }}">Manage Role</a></li>
 @endcan   
 
-<select name="lang" id="langSelect" onchange="changeLanguage()">
-    <option value="en" {{ session('lang') == 'en' ? 'selected' : '' }}>English</option>
-    <option value="fr" {{ session('lang') == 'fr' ? 'selected' : '' }}>Français</option>
-    <!-- Ajoutez d'autres options pour d'autres langues si nécessaire -->
-</select>
 </form>
 
 </form>
